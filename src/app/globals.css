@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primaryBgColor: rgba(24, 30, 41, 1);
+  --primaryColor:rgba(255, 255, 255, 1);
+  --primaryBorder:rgba(53, 60, 74, 1);
+  --secondaryColor:rgba(20, 78, 227, 1);
+  --text-color: #C9CED6;
+  --pink: #EB568E;
+  --table-head : #181E29;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+html,
+body,
+#root {
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+background-image: url('./assets/svg/Background.svg'),url("./assets//svg/BackgroundSwrill.svg");
+background-color: rgba(11, 16, 27, 1);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
