@@ -10,6 +10,15 @@
   --text-color: #C9CED6;
   --pink: #EB568E;
   --table-head : #181E29;
+  --active-color:#1EB036;
+  --inactive-color:#B0901E;
+  --table-body:#181E2938;
+  --icons-bg-color:rgba(28, 40, 63, 0.69);
+  --icons-color:rgba(201, 206, 214, 1);
+  --active-bg:rgba(30, 176, 54, 0.14);
+  --inactive-bg:rgba(176, 144, 30, 0.19);
+  --hover-color:rgba(20, 78, 227, 0.38);
+
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -35,5 +44,13 @@ background-color: rgba(11, 16, 27, 1);
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  .via-rgba-11-16-27-57 {
+    --tw-gradient-from: rgba(11, 16, 27, 0.57);
+    --tw-gradient-to: rgba(11, 16, 27, 0);
+    background-image: linear-gradient(180deg, var(--tw-gradient-from), var(--tw-gradient-to));
   }
 }

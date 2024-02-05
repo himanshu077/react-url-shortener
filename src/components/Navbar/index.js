@@ -10,9 +10,9 @@ import Logo from "../../app/assets/svg/Logo.svg"
 const Navbar = () => {
   return (
     <Box>
-      <main className="relative !top-10 !flex flex-row justify-between mx-[52px]">
+      <main className="relative !top-10 !flex flex-row justify-between lg:mx-[52px] mx-4">
         <Box className="flex !flex-row">
-          <Image src={Logo} alt="Logo" width={110} height={46} />
+          <Image src={Logo} alt="Logo" width={110} height={46} layout="responsive"/>
           <Image
             src={Trademark}
             alt="Trademark"
