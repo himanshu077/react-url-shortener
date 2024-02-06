@@ -31,7 +31,7 @@ const Navbar = () => {
           />
           <SecondaryButton
             title="Register Now"
-            className={`mx-4 hidden lg:inline`}
+            className={`mx-4 hidden lg:inline text-center`}
           />
         </Box>
       </main>

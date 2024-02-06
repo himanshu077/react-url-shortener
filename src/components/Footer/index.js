@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Container className=" fixed bottom-0 py-10 bg-gradient-to-b from-transparent via-rgba-11-16-27-57 to-rgba-11-16-27-0">
       <Typography className="text-center font-light text-sm text-[--text-color]">
-        <span className="underline text-[--secondaryColor]">Register Now</span>{" "}
+        <span className="underline text-[--secondaryColor] cursor-pointer">Register Now</span>{" "}
         to enjoy Unlimited History
       </Typography>
     </Container>

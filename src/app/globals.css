@@ -4,20 +4,23 @@
 
 :root {
   --primaryBgColor: rgba(24, 30, 41, 1);
-  --primaryColor:rgba(255, 255, 255, 1);
-  --primaryBorder:rgba(53, 60, 74, 1);
-  --secondaryColor:rgba(20, 78, 227, 1);
-  --text-color: #C9CED6;
-  --pink: #EB568E;
-  --table-head : #181E29;
-  --active-color:#1EB036;
-  --inactive-color:#B0901E;
-  --table-body:#181E2938;
-  --icons-bg-color:rgba(28, 40, 63, 0.69);
-  --icons-color:rgba(201, 206, 214, 1);
-  --active-bg:rgba(30, 176, 54, 0.14);
-  --inactive-bg:rgba(176, 144, 30, 0.19);
-  --hover-color:rgba(20, 78, 227, 0.38);
+  --primaryColor: rgba(255, 255, 255, 1);
+  --primaryBorder: rgba(53, 60, 74, 1);
+  --secondaryColor: rgba(20, 78, 227, 1);
+  --text-color: #c9ced6;
+  --pink: #eb568e;
+  --table-head: #181e29;
+  --active-color: #1eb036;
+  --inactive-color: #b0901e;
+  --table-body: #181e2938;
+  --icons-bg-color: rgba(28, 40, 63, 0.69);
+  --icons-color: rgba(201, 206, 214, 1);
+  --active-bg: rgba(30, 176, 54, 0.14);
+  --inactive-bg: rgba(176, 144, 30, 0.19);
+  --hover-color: rgba(20, 78, 227, 0.38);
+  --primary-bg-color: rgba(21, 26, 36, 0.69);
+  --active-bg-color: #1eb03624;
+  --inactive-bg-color: #b0901e30;
 
 }
 
@@ -37,8 +40,9 @@ body,
 }
 
 body {
-background-image: url('./assets/svg/Background.svg'),url("./assets//svg/BackgroundSwrill.svg");
-background-color: rgba(11, 16, 27, 1);
+  background-image: url("./assets/svg/Background.svg"),
+    url("./assets//svg/BackgroundSwrill.svg");
+  background-color: rgba(11, 16, 27, 1);
 }
 
 @layer utilities {
@@ -51,6 +55,10 @@ background-color: rgba(11, 16, 27, 1);
   .via-rgba-11-16-27-57 {
     --tw-gradient-from: rgba(11, 16, 27, 0.57);
     --tw-gradient-to: rgba(11, 16, 27, 0);
-    background-image: linear-gradient(180deg, var(--tw-gradient-from), var(--tw-gradient-to));
+    background-image: linear-gradient(
+      180deg,
+      var(--tw-gradient-from),
+      var(--tw-gradient-to)
+    );
   }
 }

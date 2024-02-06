@@ -17,13 +17,21 @@ import { columns, data, platformImage } from "./Data";
 
 const TableData = () => {
   const getStatusImage = (status) => (
-    <Image
-      src={status === "Active" ? Active : Inactive}
-      alt={status}
-      width={15}
-      height={15}
-      className="ml-2 bg-[--status-bg]"
-    />
+    <div
+      className={`${
+        status === "Active"
+          ? "bg-[--active-bg-color]"
+          : "bg-[--inactive-bg-color]"
+      } p-3 ml-2 rounded-full`}
+    >
+      <Image
+        src={status === "Active" ? Active : Inactive}
+        alt={status}
+        width={15}
+        height={15}
+        className={` bg-[--status-bg] `}
+      />
+    </div>
   );
 
   return (
@@ -75,13 +83,14 @@ const TableData = () => {
                   ) : column.id === "shortLink" && columnIndex === 0 ? (
                     <div className="flex items-center">
                       {row.shortLink}
-                      <Image
-                        src={CopyIcon}
-                        alt="copy"
-                        width={16}
-                        height={16}
-                        className="ml-2"
-                      />
+                      <div className="p-3 bg-[--primary-bg-color] rounded-full ml-2">
+                        <Image
+                          src={CopyIcon}
+                          alt="copy"
+                          width={16}
+                          height={16}
+                        />
+                      </div>
                     </div>
                   ) : column.id === "originalLink" ? (
                     <div className="flex items-center">
@@ -98,7 +107,7 @@ const TableData = () => {
                         }
                         width={24}
                         height={24}
-                        className="mr-2"
+                        className="mr-2 "
                       />
                       {row.originalLink}
                     </div>

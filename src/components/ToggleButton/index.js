@@ -46,6 +46,7 @@ const IOSSwitch = styled((props) => (
     boxSizing: "border-box",
     width: 20,
     height: 20,
+    color:"#144EE3",
   },
   "& .MuiSwitch-track": {
     borderRadius: 26 / 2,

@@ -78,6 +78,69 @@ export const data = [
     status:"Inactive",
     date:"Oct - 08 -2023"
   },
+  {
+    id: 8,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://www.twitter.com/tweets/8erelCoihu/",
+    qrCode:"",
+    clicks:1313,
+    status:"Active",
+    date:"Oct - 10 -2023"
+  },
+  {
+    id: 9,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://www.youtube.com/watch?v=8J7ZmH0lXuk",
+    qrCode:"",
+    clicks:4313,
+    status:"Inactive",
+    date:"Oct - 08 -2023"
+  },
+  {
+    id: 10,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://www.adventuresinwanderlust.com/",
+    qrCode:"",
+    clicks:1013,
+    status:"Active",
+    date:"Oct - 10 -2023"
+  },
+  {
+    id: 11,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://vimeo.com/625257654",
+    qrCode:"",
+    clicks:1313,
+    status:"Active",
+    date:"Sep - 20 -2023"
+  },
+  {
+    id: 12,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://unsplash.com/photos/2KjNwOzFfVQ",
+    qrCode:"",
+    clicks:1423,
+    status:"Active",
+    date:"Sep - 18 -2023"
+  },
+  {
+    id: 13,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://www.twitter.com/tweets/8erelCoihu/",
+    qrCode:"",
+    clicks:1313,
+    status:"Active",
+    date:"Oct - 10 -2023"
+  },
+  {
+    id: 14,
+    shortLink: "https://linkly.com/Bn41aCOlnxj",
+    originalLink: "https://www.youtube.com/watch?v=8J7ZmH0lXuk",
+    qrCode:"",
+    clicks:4313,
+    status:"Inactive",
+    date:"Oct - 08 -2023"
+  },
 ];
 
 export const platformImage = [
@@ -88,4 +151,11 @@ export const platformImage = [
   {id:5, src:Unsplash, alt:"unsplash"},
   {id:6, src:Twitter, alt:"twitter"},
   {id:7, src:Youtube, alt:"youtube"},
+  {id:8, src:Twitter, alt:"twitter"},
+  {id:9, src:Youtube, alt:"youtube"},
+  {id:10, src:Adventure, alt:"adventure"},
+  {id:11, src:Vite, alt:"vimeo"},
+  {id:12, src:Unsplash, alt:"unsplash"},
+  {id:13, src:Twitter, alt:"twitter"},
+  {id:14, src:Youtube, alt:"youtube"},
 ]

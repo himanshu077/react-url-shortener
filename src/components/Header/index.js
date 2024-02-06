@@ -1,4 +1,4 @@
-import { Badge, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import Trademark from "../../app/assets/svg/Trademark.svg";
@@ -12,8 +12,8 @@ import SearchBar from "../SearchBar";
 const Header = () => {
   return (
     <Box>
-      <main className="relative !top-10 !flex flex-row justify-between lg:mx-[52px] mx-4">
-        <Box className="flex !flex-row">
+      <main className="flex flex-row justify-between lg:mx-16 mx-4 relative top-9">
+        <Box className="flex items-center">
           <Image
             src={Logo}
             alt="Logo"
@@ -29,8 +29,10 @@ const Header = () => {
             className="relative bottom-2"
           />
         </Box>
-        <SearchBar className={`w-1/2 `} />
-        <Box className="gap-3">
+        <Box className="w-1/2 hidden lg:inline py-4">
+          <SearchBar />
+        </Box>
+        <Box className="flex items-center">
           <PrimaryButton
             title="welcome"
             subTitle="Mohammad"
@@ -38,16 +40,16 @@ const Header = () => {
             alt="down"
             width={10}
             height={10}
+            className="mr-2 px-6"
           />
-
           <SecondaryButton
+            title="2"
             src={BellIcon}
-            alt="down"
+            alt="bell"
             width={16}
             height={16}
-            className={`my-2 hidden lg:inline`}
-          >
-          </SecondaryButton>
+            className="my-2 hidden lg:inline py-3"
+          />
         </Box>
       </main>
     </Box>

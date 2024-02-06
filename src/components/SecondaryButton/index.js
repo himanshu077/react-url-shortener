@@ -12,10 +12,11 @@ export default function SecondaryButton({
 }) {
   return (
     <Button
-      className={`${className} bg-[--secondaryColor] hover:bg-[--secondaryColor] capitalize !text-[--primaryColor] rounded-full px-5 py-2 shadow-md`}
+      className={`${className} bg-[--secondaryColor] hover:bg-[--secondaryColor] shadow-[--secondaryColor] capitalize !text-[--primaryColor] rounded-full px-5 shadow-sm`}
+      style={{ boxShadow: "10px 9px 22px 0px #144EE361" }}
     >
       {title}
-      <Image src={src} alt={alt} width={width} height={height} />
+      <Image src={src} alt={alt} width={width} height={height}/>
     </Button>
   );
 }
