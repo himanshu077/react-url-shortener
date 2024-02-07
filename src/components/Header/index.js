@@ -40,7 +40,7 @@ const Header = () => {
             alt="down"
             width={10}
             height={10}
-            className="mr-2 px-6"
+            className="mr-2 px-6 text-left"
           />
           <SecondaryButton
             title="2"

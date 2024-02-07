@@ -14,7 +14,7 @@ import CopyIcon from "../assets/svg/CopyIcon.svg";
 const Dashboard = () => {
   return (
     <Box>
-      <Header />
+      <Header className=""/>
       <Box className="flex flex-row mt-12">
         <ToggleButton
           className="flex items-center justify-center"
@@ -34,11 +34,13 @@ const Dashboard = () => {
               <PrimaryButton
                 title="Bulk Edit"
                 src={BulkEditIcon}
+                alt="bulk"
                 className="mx-2 py-4 "
               />
               <PrimaryButton
                 title="Filter"
                 src={FilterIcon}
+                alt="filter"
                 className=" py-4"
               />
             </Box>

@@ -18,7 +18,7 @@ export default function PrimaryButton({
     >
       <div>
         <Typography className="text-sm">{title}</Typography>
-        <Typography className="font-bold">{subTitle}</Typography>
+        <Typography className="font-semibold text-base leading-5">{subTitle}</Typography>
       </div>
       <Image
         src={src}

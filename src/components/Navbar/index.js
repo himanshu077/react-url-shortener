@@ -23,7 +23,7 @@ const Navbar = () => {
         </Box>
         <Box className="gap-3">
           <PrimaryButton
-            title="Login"
+            subTitle="Login"
             src={SignIn}
             alt="Sign In"
             width={20}
