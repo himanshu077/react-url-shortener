@@ -1,14 +1,18 @@
 "use client";
-import * as React from "react";
+import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import SunIcon from "../../app/assets/svg/SunIcon.svg";
 import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
-import Image from "next/image";
+import Brightness5OutlinedIcon from "@mui/icons-material/Brightness5Outlined";
 
 export default function Switch() {
-  const [value, setValue] = React.useState("light");
+  const data = [
+    { value: "light", label: "Light", icon: <Brightness5OutlinedIcon /> },
+    { value: "dark", label: "Dark Theme", icon: <NightlightOutlinedIcon /> },
+  ];
+
+  const [value, setValue] = useState("dark");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -24,42 +28,28 @@ export default function Switch() {
         sx={{ "& .MuiTabs-indicator": { backgroundColor: "transparent" } }}
         className={`rounded-full bg-[--primaryBgColor]`}
       >
-        <Tab
-          value="light"
-          label="Light"
-          icon={<Image src={SunIcon} alt="Sun Icon" width={16} height={16} />}
-          iconPosition="start"
-          className={`capitalize text-base rounded-full font-${
-            value === "light" ? "semibold" : "light"
-          } text-center px-10 ${
-            value === "light" ? "bg-[--secondaryColor]" : "bg-[--primaryBgColor]"
-          }`}
-          sx={{
-            color: "#D9D9D9",
-            "&.Mui-selected": {
+        {data.map((tab) => (
+          <Tab
+            value={tab.value}
+            label={tab.label}
+            icon={tab.icon}
+            iconPosition="start"
+            className={`capitalize text-sm rounded-full font-${
+              value === tab.value
+                ? "semibold bg-[--secondaryColor]"
+                : "light bg-[--primaryBgColor]"
+            } text-center
+            ${tab.value === "dark" ? "px-4" : "px-8"}
+             `}
+            sx={{
               color: "#D9D9D9",
-            },
-          }}
-        />
-        <Tab
-          value="dark"
-          label="Dark Theme"
-          icon={<NightlightOutlinedIcon className="text-xl font-light" />}
-          iconPosition="start"
-          className={`capitalize text-base font-${
-            value === "dark" ? "semibold" : "light"
-          } rounded-full px-4 ${
-            value === "dark" ? "bg-[--secondaryColor]" : "bg-[--primaryBgColor]"
-          }`}
-          sx={{
-            color: "#D9D9D9",
-            "&.Mui-selected": {
-              color: "#D9D9D9",
-              boxShadow: "0px 4px 14px 0px #144EE361",
-              border: "none",
-            },
-          }}
-        />
+              "&.Mui-selected": {
+                color: "#D9D9D9",
+                boxShadow: " 0px 4px 14px 0px rgba(20, 78, 227, 0.38)",
+              },
+            }}
+          />
+        ))}
       </Tabs>
     </Box>
   );
