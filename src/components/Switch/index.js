@@ -4,11 +4,11 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import SunIcon from "../../app/assets/svg/SunIcon.svg";
-import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
+import NightlightOutlinedIcon from "@mui/icons-material/NightlightOutlined";
 import Image from "next/image";
 
-export default function ColorTabs() {
-  const [value, setValue] = React.useState("one");
+export default function Switch() {
+  const [value, setValue] = React.useState("light");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -19,7 +19,9 @@ export default function ColorTabs() {
       <Tabs
         value={value}
         onChange={handleChange}
-        aria-label="secondary tabs example"
+        aria-label=""
+        indicatorColor="secondary"
+        sx={{ "& .MuiTabs-indicator": { backgroundColor: "transparent" } }}
         className={`rounded-full bg-[--primaryBgColor]`}
       >
         <Tab
@@ -27,15 +29,36 @@ export default function ColorTabs() {
           label="Light"
           icon={<Image src={SunIcon} alt="Sun Icon" width={16} height={16} />}
           iconPosition="start"
-          className="text-[--text-color] capitalize text-center px-10 bg-[--primaryBgColor] after:border-b-0 "
+          className={`capitalize text-base rounded-full font-${
+            value === "light" ? "semibold" : "light"
+          } text-center px-10 ${
+            value === "light" ? "bg-[--secondaryColor]" : "bg-[--primaryBgColor]"
+          }`}
+          sx={{
+            color: "#D9D9D9",
+            "&.Mui-selected": {
+              color: "#D9D9D9",
+            },
+          }}
         />
         <Tab
           value="dark"
-          label="Dark"
-          icon={<NightlightOutlinedIcon className="text-lg font-light"/>}
+          label="Dark Theme"
+          icon={<NightlightOutlinedIcon className="text-xl font-light" />}
           iconPosition="start"
-          className="text-[--text-color] capitalize rounded-full px-12 bg-[--secondaryColor] "
-          style={{boxShadow: "0px 4px 14px 0px #144EE361"}}
+          className={`capitalize text-base font-${
+            value === "dark" ? "semibold" : "light"
+          } rounded-full px-4 ${
+            value === "dark" ? "bg-[--secondaryColor]" : "bg-[--primaryBgColor]"
+          }`}
+          sx={{
+            color: "#D9D9D9",
+            "&.Mui-selected": {
+              color: "#D9D9D9",
+              boxShadow: "0px 4px 14px 0px #144EE361",
+              border: "none",
+            },
+          }}
         />
       </Tabs>
     </Box>

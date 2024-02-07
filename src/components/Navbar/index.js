@@ -28,10 +28,11 @@ const Navbar = () => {
             alt="Sign In"
             width={20}
             height={28}
+            className={`py-3`}
           />
           <SecondaryButton
             title="Register Now"
-            className={`mx-4 hidden lg:inline text-center`}
+            className={`mx-4 hidden lg:inline text-center font-semibold `}
           />
         </Box>
       </main>

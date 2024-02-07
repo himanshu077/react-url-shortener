@@ -66,7 +66,7 @@ export default function ToggleButton({ label, className }) {
         control={<IOSSwitch sx={{ ml: 0 }} defaultChecked />}
         label={
           <span
-          className="text-[--text-color] font-light text-xs"
+          className="text-[--text-color] font-light text-sm"
             style={
               label
                 ? { marginLeft: "4px" }

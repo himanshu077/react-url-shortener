@@ -27,14 +27,14 @@ const Dashboard = () => {
       <Box className="bg-[--history-bg-color]">
         <Container>
           <Box className="flex justify-between">
-            <Typography className="text-lg text-[--text-color] py-8 font-bold">
+            <Typography className="text-lg text-[--text-color] py-10 font-bold">
               History (143)
             </Typography>
             <Box className="py-8">
               <PrimaryButton
                 title="Bulk Edit"
                 src={BulkEditIcon}
-                className="mx-2 py-4"
+                className="mx-2 py-4 "
               />
               <PrimaryButton
                 title="Filter"

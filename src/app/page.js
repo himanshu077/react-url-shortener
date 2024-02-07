@@ -8,27 +8,26 @@ import Image from "next/image";
 import QuestionCircle from "./assets/svg/QuestionCircle.svg";
 import Navbar from "@/components/Navbar";
 import { columns, data, platformImage } from "@/components/TableData/Data";
-import CopyIcon from "./assets/svg/CopyIcon.svg";
 
 const Dashboard = () => {
   return (
-    <>
-      <Navbar />
+    <Box >
+      <Navbar/>
       <Container>
         <Box className="relative">
           <Box>
             <Box className="mt-40 text-center">
-              <Typography className="font-extrabold lg:text-5xl text-4xl bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+              <Typography className="font-extrabold lg:text-6xl text-4xl bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
                 Shorten Your Loooong Links :)
               </Typography>
               <Box>
-                <Typography className="text-center text-[--text-color] font-light text-sm my-5 ">
+                <Typography className="text-center text-[--text-color] font-light text-base my-5 ">
                   Linkly is an efficient and easy-to-use URL shortening service
                   that streamlines your online experience.
                 </Typography>
               </Box>
             </Box>
-            <SearchBar className={`w-full lg:w-1/3`} />
+            <SearchBar className={`w-full lg:w-2/3`} />
           </Box>
           <Box className="flex flex-row my-6">
             <ToggleButton
@@ -37,7 +36,7 @@ const Dashboard = () => {
             />
           </Box>
           <Box className="mb-6 items-center justify-center mx-4 flex flex-row">
-            <Typography className="text-[--text-color] text-center font-light text-xs ">
+            <Typography className="text-[--text-color] text-center font-light text-sm ">
               You can create<span className="text-[--pink]"> 05 </span>more
               links. Register Now to enjoy Unlimited usage
             </Typography>
@@ -53,8 +52,6 @@ const Dashboard = () => {
             columns={columns}
             data={data}
             platformImage={platformImage}
-            src1={CopyIcon}
-            alt1="Copy"
           />
           <Footer/>
         </Box>
@@ -62,7 +59,7 @@ const Dashboard = () => {
       <Box className="fixed top-1/2 right-0 rotate-90 hidden xl:inline">
         <Switch />
       </Box>
-    </>
+    </Box>
   );
 };
 export default Dashboard;

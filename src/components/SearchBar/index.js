@@ -20,22 +20,22 @@ const SearchBar = ({ className }) => {
       <InputBase
         startAdornment={
           <InputAdornment position="start">
-            <Image src={Active} alt="link" width={34} height={40} />
+            <Image src={Active} alt="link" width={28} height={28} />
           </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
             {isLargeScreen ? (
-              <SecondaryButton title="Shorten Now!" className={`py-2`}/>
+              <SecondaryButton title="Shorten Now!"/>
             ) : (
               <div className="bg-[--secondaryColor] rounded-full">
-                <ArrowForwardIcon className=" text-[--text-color] m-3 text-xl" />
+                <ArrowForwardIcon className=" text-[--text-color] m-3 text-2xl" />
               </div>
             )}
           </InputAdornment>
         }
         placeholder="Enter the link here "
-        className="py-2 border-0 p-0 w-full text-[--text-color]"
+        className="py-3 border-0 p-0 w-full text-[--text-color]"
       />
     </Container>
   );

@@ -41,9 +41,13 @@ export default function TabsTable() {
               <Image src={tabIcons[index]} alt="icons" width={18} height={18} />
             }
             iconPosition="start"
-            className="text-[--primaryColor] capitalize"
+            className="capitalize"
             sx={{
-              boxShadow: value === index ? "inset 10px 9px 22px 0px #144EE361" : "none",
+              color:"#D9D9D9",
+              "&.Mui-selected": { 
+                color: "#D9D9D9",
+                boxShadow: "inset 10px 9px 22px 0px #144EE361", 
+              },
             }}
           />
         ))}

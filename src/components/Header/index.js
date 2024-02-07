@@ -29,7 +29,7 @@ const Header = () => {
             className="relative bottom-2"
           />
         </Box>
-        <Box className="w-1/2 hidden lg:inline py-4">
+        <Box className="w-3/4 hidden lg:inline py-4">
           <SearchBar />
         </Box>
         <Box className="flex items-center">

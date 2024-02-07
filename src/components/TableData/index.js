@@ -42,7 +42,7 @@ const TableData = () => {
             {columns.map((column, index) => (
               <TableCell
                 key={column.id}
-                className={`text-[--text-color] ${index === 0 ? "pl-4" : ""}`}
+                className={`text-[--text-color] font-bold text-sm ${index === 0 ? "pl-4" : ""}`}
               >
                 {column.id === "date" ? (
                   <div className="flex items-center justify-center">
@@ -66,7 +66,7 @@ const TableData = () => {
           {data.map((row, rowIndex) => (
             <TableRow key={rowIndex}>
               {columns.map((column, columnIndex) => (
-                <TableCell key={columnIndex} className="text-[--text-color]">
+                <TableCell key={columnIndex} className="text-[--text-color] text-sm font-light">
                   {column.id === "status" ? (
                     <div className="flex items-center">
                       <span
