@@ -8,11 +8,12 @@ import Image from "next/image";
 import QuestionCircle from "./assets/svg/QuestionCircle.svg";
 import Navbar from "@/components/Navbar";
 import { columns, data, platformImage } from "@/components/TableData/Data";
+import TableView from "@/components/TableView";
 
 const Dashboard = () => {
   return (
-    <Box >
-      <Navbar/>
+    <Box>
+      <Navbar />
       <Container>
         <Box className="relative">
           <Box>
@@ -48,12 +49,17 @@ const Dashboard = () => {
               className="ml-2 hidden lg:inline"
             />
           </Box>
-          <TableData
-            columns={columns}
-            data={data}
-            platformImage={platformImage}
-          />
-          <Footer/>
+          <Box className="hidden lg:inline md:inline">
+            <TableData
+              columns={columns}
+              data={data}
+              platformImage={platformImage}
+            />
+          </Box>
+          <Box className="inline lg:hidden md:hidden">
+            <TableView />
+          </Box>
+          <Footer />
         </Box>
       </Container>
       <Box className="fixed top-1/2 right-0 rotate-90 hidden xl:inline">
