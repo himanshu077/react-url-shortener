@@ -26,7 +26,7 @@ const SearchBar = ({ className }) => {
         endAdornment={
           <InputAdornment position="end">
             {isLargeScreen ? (
-              <SecondaryButton title="Shorten Now!" className={`py-3`}/>
+              <SecondaryButton title="Shorten Now!" className={`py-2`}/>
             ) : (
               <div className="bg-[--secondaryColor] rounded-full">
                 <ArrowForwardIcon className=" text-[--text-color] m-3 text-xl" />
