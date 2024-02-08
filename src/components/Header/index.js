@@ -4,7 +4,6 @@ import React from "react";
 import Trademark from "../../app/assets/svg/Trademark.svg";
 import ChevronDown from "../../app/assets/svg/ChevronDown.svg";
 import BellIcon from "../../app/assets/svg/BellIcon.svg";
-import SecondaryButton from "../SecondaryButton";
 import PrimaryButton from "../PrimaryButton";
 import Logo from "../../app/assets/svg/Logo.svg";
 import SearchBar from "../SearchBar";
@@ -40,7 +39,7 @@ const Header = () => {
             alt="down"
             width={10}
             height={10}
-            className="mr-2 px-6 text-left"
+            className="mr-2 px-6 text-left py-[10px]"
           />
           <Box className="bg-[--secondaryColor] px-4 py-3 rounded-full flex flex-row">
             <Image src={BellIcon} alt="bell" width={16} height={16} />

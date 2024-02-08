@@ -14,7 +14,7 @@ export default function PrimaryButton({
 }) {
   return (
     <Button
-      className={`${className} bg-[--primaryBgColor] hover:bg-[--primaryBgColor] py-3 capitalize !text-[--primaryColor] rounded-full border-[--primaryBorder] px-5 `}
+      className={`${className} bg-[--primaryBgColor] hover:bg-[--primaryBgColor] capitalize !text-[--primaryColor] rounded-full border-[--primaryBorder] px-5 `}
     >
       <div>
         <Typography className="text-sm">{title}</Typography>

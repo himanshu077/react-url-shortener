@@ -28,7 +28,7 @@ const Navbar = () => {
             alt="Sign In"
             width={20}
             height={28}
-            className={`py-3`}
+            className={`py-4`}
           />
           <SecondaryButton
             title="Register Now"
