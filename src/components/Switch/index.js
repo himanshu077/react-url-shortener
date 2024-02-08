@@ -39,14 +39,16 @@ export default function Switch() {
                 ? "semibold bg-[--secondaryColor]"
                 : "light bg-[--primaryBgColor]"
             } text-center
-            ${tab.value === "dark" ? "px-4" : "px-8"}
-             `}
+  ${tab.value === "dark" ? "px-4" : "px-8"}
+  `}
             sx={{
               color: "#D9D9D9",
               "&.Mui-selected": {
                 color: "#D9D9D9",
                 boxShadow: " 0px 4px 14px 0px rgba(20, 78, 227, 0.38)",
               },
+              paddingY: 0,
+              minHeight: 58, 
             }}
           />
         ))}

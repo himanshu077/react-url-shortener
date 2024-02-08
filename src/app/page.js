@@ -17,12 +17,12 @@ const Dashboard = () => {
       <Container>
         <Box className="relative">
           <Box>
-            <Box className="mt-40 text-center">
-              <Typography className="font-extrabold lg:text-6xl text-4xl bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
+            <Box className="lg:mt-44 md:mt-40 mt-24 text-center">
+              <Typography className="font-extrabold lg:text-6xl lg:leading-normal text-4xl bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent bg-clip-text">
                 Shorten Your Loooong Links :)
               </Typography>
               <Box>
-                <Typography className="text-center text-[--text-color] font-light text-base my-5 ">
+                <Typography className="text-center text-[--text-color] font-light text-base my-5">
                   Linkly is an efficient and easy-to-use URL shortening service
                   that streamlines your online experience.
                 </Typography>
