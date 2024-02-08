@@ -21,13 +21,13 @@ const Dashboard = () => {
   return (
     <Box>
       <Header className="" />
-      <Box className="flex flex-row mt-12">
+      <Box className="flex flex-row mt-10">
         <ToggleButton
           className="flex items-center justify-center"
           label="Auto Paste from Clipboard"
         />
       </Box>
-      <Box className="mt-20 bg-[--primaryBgColor]">
+      <Box className="mt-8 bg-[--primaryBgColor]">
         <TabsTable />
       </Box>
       <Box className="bg-[--history-bg-color]">

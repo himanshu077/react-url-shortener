@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import Trademark from "../../app/assets/svg/Trademark.svg";
@@ -42,14 +42,10 @@ const Header = () => {
             height={10}
             className="mr-2 px-6 text-left"
           />
-          <SecondaryButton
-            title="2"
-            src={BellIcon}
-            alt="bell"
-            width={16}
-            height={16}
-            className="my-2 hidden lg:inline py-3"
-          />
+          <Box className="bg-[--secondaryColor] px-4 py-3 rounded-full flex flex-row">
+            <Image src={BellIcon} alt="bell" width={16} height={16} />
+            <Typography className="text-[--text-color] text-xs font-semibold mb-3" >2</Typography>
+          </Box>
         </Box>
       </main>
     </Box>

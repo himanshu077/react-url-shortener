@@ -48,6 +48,8 @@ export default function TabsTable() {
                 color: "#D9D9D9",
                 boxShadow: "inset 10px 9px 22px 0px #144EE361", 
               },
+              paddingY:0,
+              minHeight:70,
             }}
           />
         ))}
