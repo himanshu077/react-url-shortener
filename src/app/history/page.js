@@ -21,7 +21,7 @@ const Dashboard = () => {
   return (
     <Box>
       <Header className="" />
-      <Box className="flex flex-row mt-10">
+      <Box className="flex flex-row mt-16">
         <ToggleButton
           className="flex items-center justify-center"
           label="Auto Paste from Clipboard"
@@ -54,7 +54,7 @@ const Dashboard = () => {
               ))}
             </Box>
           </Box>
-          <Box className="hidden lg:inline md:inline">
+          <Box className="hidden lg:inline md:inline" >
             <TableData
               columns={columns}
               data={data}

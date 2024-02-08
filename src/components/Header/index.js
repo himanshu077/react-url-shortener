@@ -28,7 +28,7 @@ const Header = () => {
             className="relative bottom-2"
           />
         </Box>
-        <Box className="w-3/4 hidden lg:inline py-4">
+        <Box className="w-3/4 hidden lg:inline">
           <SearchBar />
         </Box>
         <Box className="flex items-center">
@@ -41,7 +41,7 @@ const Header = () => {
             height={10}
             className="mr-2 px-6 text-left py-[10px]"
           />
-          <Box className="bg-[--secondaryColor] px-4 py-3 rounded-full flex flex-row">
+          <Box className="bg-[--secondaryColor] px-4 py-3 rounded-full flex flex-row" sx={{boxShadow: "10px 9px 22px 0px #144EE361"}}>
             <Image src={BellIcon} alt="bell" width={16} height={16} />
             <Typography className="text-[--text-color] text-xs font-semibold mb-3" >2</Typography>
           </Box>
