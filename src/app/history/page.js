@@ -235,6 +235,7 @@ const History = () => {
                 <Button
                   key={button.id}
                   className="!text-[--text-color] !capitalize !bg-[--primaryBgColor] !text-base !my-7 !rounded-full !px-4 !py-2"
+                  style={{boxShadow: "0px 4px 10px 0px #0000001A !important"}}
                 >
                 <span className="!mr-2">
                 {button.icon}
