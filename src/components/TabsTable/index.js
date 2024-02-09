@@ -12,17 +12,14 @@ import { useRouter } from "next/navigation";
 
 export default function TabsTable() {
   const [value, setValue] = React.useState(0);
-  const router = useRouter();
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    const routes = ["/history", "/statistics", "/clickstream", "/settings"];
-    router.push(routes[newValue]);
   };
   const data = [
-    { id: Math.random(), label: "History", icon: <HistoryIcon/> },
-    { id: Math.random(), label: "Statistics", icon: <StatisticsIcon/> },
-    { id: Math.random(), label: "Click Stream", icon: <ClickStreamIcon/> },
-    { id: Math.random(), label: "Setting", icon: <SettingIcon/> },
+    { id: 0, label: "History", icon: <HistoryIcon/> },
+    { id: 1, label: "Statistics", icon: <StatisticsIcon/> },
+    { id: 2, label: "Click Stream", icon: <ClickStreamIcon/> },
+    { id: 3, label: "Setting", icon: <SettingIcon/> },
   ];
 
   return (
