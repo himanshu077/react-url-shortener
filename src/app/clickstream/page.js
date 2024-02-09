@@ -207,7 +207,7 @@ const columns = [
   },
 ]
 
-const History = () => {
+const ClickStream = () => {
   const buttonsData = [
     { id: 1, title: "Bulk Edit", icon: <BulkEditIcon/> },
     { id: 2, title: "Filter", icon: <FilterIcon/> },
@@ -228,7 +228,7 @@ const History = () => {
         <Container>
           <Box className="flex justify-between">
             <Typography className="!text-lg !text-[--text-color] !py-10 !font-bold">
-              History (143)
+            Click Stream (143)
             </Typography>
             <Box className="flex gap-2">
               {buttonsData.map((button) => (
@@ -267,4 +267,4 @@ const History = () => {
   );
 };
 
-export default History;
+export default ClickStream;

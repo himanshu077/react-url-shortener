@@ -8,13 +8,16 @@ import StatisticsIcon from "@/app/assets/svg/StatisticsIcon.svg";
 import SettingIcon from "@/app/assets/svg/SettingIcon.svg";
 import ClickStreamIcon from "@/app/assets/svg/ClickStreamIcon.svg";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function TabsTable() {
   const [value, setValue] = React.useState(0);
+  const router = useRouter();
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    const routes = ["/history", "/statistics", "/clickstream", "/settings"];
+    router.push(routes[newValue]);
   };
-
   const data = [
     { id: Math.random(), label: "History", icon: <HistoryIcon/> },
     { id: Math.random(), label: "Statistics", icon: <StatisticsIcon/> },
