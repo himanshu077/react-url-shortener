@@ -1,32 +1,25 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import Image from "next/image";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function PrimaryButton({
   title,
   className,
-  src,
-  alt,
-  width,
-  height,
+  icon,
   subTitle,
 }) {
   return (
     <Button
-      className={`${className} bg-[--primaryBgColor] hover:bg-[--primaryBgColor] capitalize !text-[--primaryColor] rounded-full border-[--primaryBorder] px-5 `}
+      className={`${className} !bg-[--primaryBgColor] !hover:bg-[--primaryBgColor] !capitalize !text-[--primaryColor] !rounded-full !border-[--primaryBorder] !px-5 `}
     >
-      <div>
-        <Typography className="text-sm">{title}</Typography>
-        <Typography className="font-semibold text-base leading-5">{subTitle}</Typography>
-      </div>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="inline-block ml-1"
-      />
+      <Box>
+        <Typography className="!text-sm">{title}</Typography>
+        <Typography className="!font-semibold !text-base !leading-5">{subTitle}</Typography>
+      </Box>
+      <Box>
+        {icon}
+      </Box>
     </Button>
   );
 }

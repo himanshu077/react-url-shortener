@@ -3,10 +3,10 @@ import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import HistoryIcon from "../../app/assets/svg/HistoryIcon.svg";
-import StatisticsIcon from "../../app/assets/svg/StatisticsIcon.svg";
-import SettingIcon from "../../app/assets/svg/SettingIcon.svg";
-import ClickStreamIcon from "../../app/assets/svg/ClickStreamIcon.svg";
+import HistoryIcon from "@/app/assets/svg/HistoryIcon.svg";
+import StatisticsIcon from "@/app/assets/svg/StatisticsIcon.svg";
+import SettingIcon from "@/app/assets/svg/SettingIcon.svg";
+import ClickStreamIcon from "@/app/assets/svg/ClickStreamIcon.svg";
 import Image from "next/image";
 
 export default function TabsTable() {
@@ -15,8 +15,12 @@ export default function TabsTable() {
     setValue(newValue);
   };
 
-  const tabLabels = ["History", "Statistics", "Click Stream", "Settings"];
-  const tabIcons = [HistoryIcon, StatisticsIcon, ClickStreamIcon, SettingIcon];
+  const data = [
+    { id: Math.random(), label: "History", icon: <HistoryIcon/> },
+    { id: Math.random(), label: "Statistics", icon: <StatisticsIcon/> },
+    { id: Math.random(), label: "Click Stream", icon: <ClickStreamIcon/> },
+    { id: Math.random(), label: "Setting", icon: <SettingIcon/> },
+  ];
 
   return (
     <Box
@@ -33,23 +37,21 @@ export default function TabsTable() {
         aria-label=""
         selectionFollowsFocus
       >
-        {tabLabels.map((label, index) => (
+        {data.map((tab) => (
           <Tab
-            key={index}
-            label={label}
-            icon={
-              <Image src={tabIcons[index]} alt="icons" width={18} height={18} />
-            }
+            key={tab.id}
+            label={tab.label}
+            icon={tab?.icon}
             iconPosition="start"
-            className="capitalize"
+            className="!capitalize"
             sx={{
-              color:"#D9D9D9",
-              "&.Mui-selected": { 
+              color: "#D9D9D9",
+              "&.Mui-selected": {
                 color: "#D9D9D9",
-                boxShadow: "inset 10px 9px 22px 0px #144EE361", 
+                boxShadow: "inset 10px 9px 22px 0px #144EE361",
               },
-              paddingY:0,
-              minHeight:70,
+              paddingY: 0,
+              minHeight: 70,
             }}
           />
         ))}

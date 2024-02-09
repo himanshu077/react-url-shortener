@@ -66,7 +66,7 @@ export default function ToggleButton({ label, className }) {
         control={<IOSSwitch sx={{ ml: 0 }} defaultChecked />}
         label={
           <span
-          className="text-[--text-color] font-light text-sm"
+          className="text-[--text-color] !font-light !text-sm"
             style={
               label
                 ? { marginLeft: "4px" }
@@ -76,7 +76,7 @@ export default function ToggleButton({ label, className }) {
             {label}
           </span>
         }
-        className={`${className} flex md:!flex-row !gap-2`}
+        className={`${className} !flex md:!flex-row !gap-2`}
       />
     </FormGroup>
     </Container>
