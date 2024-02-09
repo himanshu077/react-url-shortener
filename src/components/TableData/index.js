@@ -28,10 +28,10 @@ const TableData = ({ columns, data, className, loading }) => {
               {columns.map((column, index) => (
                 <TableCell
                   key={index}
-                  className={`!text-[--text-color] md:!text-sm !text-base font-semibold whitespace-nowrap  ${
+                  className={`!text-[--text-color] md:!text-sm !text-base !font-semibold !whitespace-nowrap  ${
                     column.header === "ACTION"
                       ? "action-heading"
-                      : "!text-[--text-color]  !text-base font-semibold  whitespace-nowrap"
+                      : "!text-[--text-color]  !text-base !font-semibold  !whitespace-nowrap"
                   }`}
                 >
                 <Box className="!flex !flex-row !gap-2">
