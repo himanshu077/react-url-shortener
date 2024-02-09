@@ -232,7 +232,7 @@ const History = () => {
               {buttonsData.map((button) => (
                 <Button
                   key={button.id}
-                  className="!text-[--text-color] !capitalize !bg-[--primaryBgColor] !my-7 !rounded-full !px-4 !py-2"
+                  className="!text-[--text-color] !capitalize !bg-[--primaryBgColor] !text-base !my-7 !rounded-full !px-4 !py-2"
                 >
                 <span className="!mr-2">
                 {button.icon}

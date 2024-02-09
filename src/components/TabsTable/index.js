@@ -43,7 +43,7 @@ export default function TabsTable() {
             label={tab.label}
             icon={tab?.icon}
             iconPosition="start"
-            className="!capitalize"
+            className="!capitalize !text-base"
             sx={{
               color: "#D9D9D9",
               "&.Mui-selected": {

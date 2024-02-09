@@ -37,7 +37,7 @@ export default function Switch() {
             iconPosition="start"
             className={classNames(
               '!capitalize',
-              '!text-sm',
+              '!text-base',
               '!rounded-full',
               {
                 '!font-semibold': value === tab.value,
