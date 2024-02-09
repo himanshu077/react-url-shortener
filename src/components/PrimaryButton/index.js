@@ -11,7 +11,7 @@ export default function PrimaryButton({
 }) {
   return (
     <Button
-      className={`${className} !bg-[--primaryBgColor] !hover:bg-[--primaryBgColor] !capitalize !text-[--primaryColor] !rounded-full !border-[--primaryBorder] !px-5 `}
+      className={`${className} !bg-[--primaryBgColor] !hover:bg-[--primaryBgColor] !capitalize !text-[--primaryColor] !rounded-full !border-[--primaryBorder] !border-2 !px-5 `}
     style={{boxShadow: "0px 4px 10px 0px #0000001A !important"}}
     >
       <Box>
