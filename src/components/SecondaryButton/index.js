@@ -8,8 +8,8 @@ export default function SecondaryButton({
 }) {
   return (
     <Button
-      className={`${className} !bg-[--secondaryColor] !text-sm !hover:bg-[--secondaryColor] !shadow-[--secondaryColor] !py-4 !capitalize !text-[--primaryColor] !rounded-full !px-5 !shadow-sm`}
-      style={{ boxShadow: "10px 9px 22px 0px #144EE361" }}
+      className={`${className} !bg-[--secondaryColor] !text-sm !hover:bg-[--secondaryColor] !py-4 !capitalize !text-[--primaryColor] !rounded-full !px-5`}
+      style={{ boxShadow: "10px 9px 22px 0px #144EE361  !important"}}
     >
       {title}
       {icon}

@@ -213,7 +213,7 @@ const Dashboard = () => {
         <Box className="!relative">
           <Box>
             <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
-              <Typography className="!font-extrabold lg:!text-6xl lg:!leading-snug !text-4xl !bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent !bg-clip-text">
+              <Typography className="!font-extrabold lg:!text-6xl lg:!leading-tight !text-4xl !bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent !bg-clip-text">
                 Shorten Your Loooong Links :)
               </Typography>
               <Box>
