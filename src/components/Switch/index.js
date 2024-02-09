@@ -36,17 +36,17 @@ export default function Switch() {
             icon={tab.icon}
             iconPosition="start"
             className={classNames(
-              'capitalize',
-              'text-sm',
-              'rounded-full',
+              '!capitalize',
+              '!text-sm',
+              '!rounded-full',
               {
-                'font-semibold': value === tab.value,
-                'bg-[--secondaryColor]': value === tab.value,
-                'font-light': value !== tab.value,
-                'bg-[--primaryBgColor]': value !== tab.value,
-                'text-center': true,
-                'px-4': tab.value === 'dark',
-                'px-8': tab.value !== 'dark'
+                '!font-semibold': value === tab.value,
+                '!bg-[--secondaryColor]': value === tab.value,
+                '!font-light': value !== tab.value,
+                '!bg-[--primaryBgColor]': value !== tab.value,
+                '!text-center': true,
+                '!px-4': tab.value === 'dark',
+                '!px-8': tab.value !== 'dark'
               }
             )}
             sx={{
