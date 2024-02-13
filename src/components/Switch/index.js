@@ -41,7 +41,7 @@ export default function Switch() {
               '!rounded-full',
               {
                 '!font-semibold': value === tab.value,
-                '!bg-[--secondaryColor]': value === tab.value,
+                '!bg-[--secondaryColor] !m-1': value === tab.value,
                 '!font-light': value !== tab.value,
                 '!bg-[--primaryBgColor]': value !== tab.value,
                 '!text-center': true,
@@ -53,7 +53,7 @@ export default function Switch() {
               color: "#D9D9D9",
               "&.Mui-selected": {
                 color: "#D9D9D9",
-                boxShadow: "0px 4px 14px 0px rgba(20, 78, 227, 0.38)",
+                boxShadow: "0px 4px 14px 0px rgba(20, 78, 227, 0.69)",
               },
               paddingY: 0,
               minHeight: 58,

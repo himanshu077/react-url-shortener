@@ -19,7 +19,7 @@ export default function TabsTable() {
     { id: 0, label: "History", icon: <HistoryIcon/> },
     { id: 1, label: "Statistics", icon: <StatisticsIcon/> },
     { id: 2, label: "Click Stream", icon: <ClickStreamIcon/> },
-    { id: 3, label: "Setting", icon: <SettingIcon/> },
+    { id: 3, label: "Settings", icon: <SettingIcon/> },
   ];
 
   return (
@@ -48,7 +48,8 @@ export default function TabsTable() {
               color: "#D9D9D9",
               "&.Mui-selected": {
                 color: "#D9D9D9",
-                boxShadow: "inset 10px 9px 22px 0px #144EE361",
+                boxShadow: "inset 10px 9px 22px 0px rgba(20, 78, 227, 0.38)",
+
               },
               paddingY: 0,
               minHeight: 70,

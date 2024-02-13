@@ -19,13 +19,13 @@ const SearchBar = ({ className }) => {
       <InputBase
         startAdornment={
           <InputAdornment position="start">
-            <Active className="!w-5 !h-5"/>
+            <Active className="!w-5 !h-5 "/>
           </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
             {isLargeScreen ? (
-              <SecondaryButton title="Shorten Now!"/>
+              <SecondaryButton title="Shorten Now!" className="!ml-1"/>
             ) : (
               <div className="!bg-[--secondaryColor] !rounded-full">
                 <ArrowForwardIcon className=" !text-[--text-color] !m-3 !text-2xl" />

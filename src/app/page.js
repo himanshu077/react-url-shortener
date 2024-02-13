@@ -158,15 +158,23 @@ const dynamicColumns = [
     cell: (props) => {
       return <Box className="!flex !flex-row !gap-2"><Box className="!mt-2">{props.cell.row.original.shortLink}</Box><Box className="!p-3 !rounded-full !bg-[--icons-bg-color]"><CopyIcon className="!w-4 !h-4" /></Box></Box>;
     },
-  }, {
+  },  {
     header: "Original Link",
     accessorKey: "originalLink",
     cell: (props) => {
-      const src = props.cell.row.original.originalLink?.src
-      const alt = props.cell.row.original.originalLink?.alt
-      return <Box className="!flex !flex-row !gap-2"><Image src={src} alt={alt} width={36} height={36} className="" /><Box className="!mt-2">{props.cell.row.original.originalLink?.label}</Box></Box>;
+      const { src, alt, label } = props.cell.row.original.originalLink;
+      return (
+        <Box className="!flex !flex-row !gap-2 !items-center">
+          <a href={label} target="_blank" rel="noopener noreferrer">
+            <Image src={src} alt={alt} width={36} height={36} className="" />
+          </a>
+          <a href={label} target="_blank" rel="noopener noreferrer">
+            <Box className="!mt-2">{label}</Box>
+          </a>
+        </Box>
+      );
     },
-  },
+  },  
   {
     header: "QR Code",
     accessorKey: "qrCode",
@@ -186,18 +194,22 @@ const dynamicColumns = [
     accessorKey: "status",
     cell: (props) => {
       const status = props.cell.row.original.status
-      return <Box className="!flex !flex-row !gap-2"><Box className="!mt-2">{status}</Box><Box className={classNames('!p-2', '!rounded-full', {
-        '!bg-[--active-bg]': status === 'Active',
-        '!bg-[--inactive-bg]': status !== 'Active',
-      })}>
-        {status === 'Active' ? <Active className="w-5 h-5" /> : <Inactive className="w-5 h-5" />}
-      </Box>
-      </Box>;
+      return (
+        <Box className="!flex !flex-row !items-center !justify-end">
+          <Box className="!mr-3">{status}</Box>
+          <Box className={classNames('!p-2', '!rounded-full', {
+            '!bg-[--active-bg]': status === 'Active',
+            '!bg-[--inactive-bg]': status !== 'Active',
+          })}>
+            {status === 'Active' ? <Active className="w-5 h-5" /> : <Inactive className="w-5 h-5" />}
+          </Box>
+        </Box>
+      );
     },
   },
   {
     header: "Date",
-    icon:<UnFoldLess/>,
+    icon: <UnFoldLess />,
     accessorKey: "date",
     cell: (props) => {
       return <Box>{props.cell.row.original.date}</Box>;
@@ -213,7 +225,9 @@ const Dashboard = () => {
         <Box className="!relative">
           <Box>
             <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
-              <Typography className="!font-extrabold lg:!text-6xl lg:!leading-tight !text-4xl !bg-gradient-to-r from-blue-500 via-pink-500 to-blue-500 text-transparent !bg-clip-text">
+              <Typography className="!font-extrabold lg:!text-6xl lg:!leading-tight !text-4x text-transparent !bg-clip-text" style={{
+              background: "linear-gradient(to right, #144EE3, #144EE3, rgba(235, 86, 142, 1), rgba(163, 83, 170, 1), rgba(163, 83, 170, 1), rgba(235, 86, 142, 1), #144EE3, #144EE3)"
+              }}>
                 Shorten Your Loooong Links :)
               </Typography>
               <Box>

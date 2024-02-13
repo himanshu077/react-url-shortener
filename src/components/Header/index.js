@@ -26,7 +26,7 @@ const Header = () => {
             icon={<ChevronDown />}
             className="!mr-2 !px-6 !text-left !gap-2 !py-[10px]"
           />
-          <Box className="!bg-[--secondaryColor] !px-4 !py-3 !rounded-full !flex !flex-row" sx={{ boxShadow: "10px 9px 22px 0px #144EE361 !important" }}>
+          <Box className="!bg-[--secondaryColor] !px-5 !py-4 !rounded-full !flex !flex-row" sx={{ boxShadow: "10px 12px 22px 0px #144EE361 !important" }}>
             <BellIcon className="!mt-2"/>
             <Typography className="!text-[--text-color] !text-xs !font-semibold !mb-3" >2</Typography>
           </Box>

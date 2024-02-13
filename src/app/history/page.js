@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import TableData from "@/components/TableData";
 import TabsTable from "@/components/TabsTable";
 import { Box, Button, Container, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import BulkEditIcon from "@/app/assets/svg/BulkEditIcon.svg";
 import FilterIcon from "@/app/assets/svg/FilterIcon.svg";
 import Switch from "../../components/Switch";
@@ -18,11 +18,12 @@ import Adventure from "../assets/adventure.png";
 import Unsplash from "../assets/unsplash.png"
 import Inactive from "@/app/assets/svg/Inactive.svg"
 import Active from "@/app/assets/svg/Active.svg"
-import { QrCode2Outlined } from "@mui/icons-material";
+import { Delete, Edit, QrCode2Outlined } from "@mui/icons-material";
 import Image from "next/image";
 import { tableData } from "@/components/MobileDataTable/Data";
 import UnFoldLess from "@/app/assets/svg/UnFoldLess.svg"
 import classNames from "classnames";
+import Modal from "@/components/Modal";
 
 const data = [
   {
@@ -153,64 +154,98 @@ const data = [
   },
 ];
 
-const columns = [
-  {
-    header: "Short Link",
-    accessorKey: "shortLink",
-    cell: (props) => {
-      return <Box className="!flex !flex-row !gap-2"><Box className="!mt-2">{props.cell.row.original.shortLink}</Box><Box className="!p-3 !rounded-full !bg-[--icons-bg-color]"><CopyIcon className="!w-4 !h-4" /></Box></Box>;
-    },
-  }, {
-    header: "Original Link",
-    accessorKey: "originalLink",
-    cell: (props) => {
-      const src = props.cell.row.original.originalLink?.src
-      const alt = props.cell.row.original.originalLink?.alt
-      return <Box className="!flex !flex-row !gap-2"><Image src={src} alt={alt} width={36} height={36} className="" /><Box className="!mt-2">{props.cell.row.original.originalLink?.label}</Box></Box>;
-    },
-  },
-  {
-    header: "QR Code",
-    accessorKey: "qrCode",
-    cell: (props) => {
-      return <Box>{props.cell.row.original.qrCode}</Box>;
-    },
-  },
-  {
-    header: "Clicks",
-    accessorKey: "clicks",
-    cell: (props) => {
-      return <Box>{props.cell.row.original.clicks}</Box>;
-    },
-  },
-  {
-    header: "Status",
-    accessorKey: "status",
-    cell: (props) => {
-      const status = props.cell.row.original.status
-      return <Box className="!flex !flex-row !gap-2"><Box className="!mt-2">{status}</Box><Box className={classNames('!p-2', '!rounded-full', {
-        '!bg-[--active-bg]': status === 'Active',
-        '!bg-[--inactive-bg]': status !== 'Active',
-      })}>
-        {status === 'Active' ? <Active className="w-5 h-5" /> : <Inactive className="w-5 h-5" />}
-      </Box>
-      </Box>;
-    },
-  },
-  {
-    header: "Date",
-    icon:<UnFoldLess/>,
-    accessorKey: "date",
-    cell: (props) => {
-      return <Box>{props.cell.row.original.date}</Box>;
-    },
-  },
-]
 
 const History = () => {
+
+  const [isOpenModal, setIsModalOpen] = useState(false)
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const columns = [
+    {
+      header: "Short Link",
+      accessorKey: "shortLink",
+      cell: (props) => {
+        return <Box className="!flex !flex-row !gap-2"><Box className="!mt-2">{props.cell.row.original.shortLink}</Box><Box className="!p-3 !rounded-full !bg-[--icons-bg-color]"><CopyIcon className="!w-4 !h-4" /></Box></Box>;
+      },
+    }, {
+      header: "Original Link",
+      accessorKey: "originalLink",
+      cell: (props) => {
+        const { src, alt, label } = props.cell.row.original.originalLink;
+        return (
+          <Box className="!flex !flex-row !gap-2 !items-center">
+            <a href={label} target="_blank" rel="noopener noreferrer">
+              <Image src={src} alt={alt} width={36} height={36} className="" />
+            </a>
+            <a href={label} target="_blank" rel="noopener noreferrer">
+              <Box className="!mt-2">{label}</Box>
+            </a>
+          </Box>
+        );
+      },
+    },
+    {
+      header: "QR Code",
+      accessorKey: "qrCode",
+      cell: (props) => {
+        return <Box>{props.cell.row.original.qrCode}</Box>;
+      },
+    },
+    {
+      header: "Clicks",
+      accessorKey: "clicks",
+      cell: (props) => {
+        return <Box>{props.cell.row.original.clicks}</Box>;
+      },
+    },
+    {
+      header: "Status",
+      accessorKey: "status",
+      cell: (props) => {
+        const status = props.cell.row.original.status
+        return (
+          <Box className="!flex !flex-row !items-center !justify-end">
+            <Box className="!mr-3">{status}</Box>
+            <Box className={classNames('!p-2', '!rounded-full', {
+              '!bg-[--active-bg]': status === 'Active',
+              '!bg-[--inactive-bg]': status !== 'Active',
+            })}>
+              {status === 'Active' ? <Active className="w-5 h-5" /> : <Inactive className="w-5 h-5" />}
+            </Box>
+          </Box>
+        );
+      },
+    },
+    {
+      header: "Date",
+      icon: <UnFoldLess />,
+      accessorKey: "date",
+      cell: (props) => {
+        return <Box>{props.cell.row.original.date}</Box>;
+      },
+    },
+    {
+      header: "Action",
+      accessorKey: "action",
+      cell: (props) => {
+        return <Box className="!flex !flex-row">
+          <Box className="!bg-[--primaryBgColor] !p-3 !rounded-full !mr-3 !border-2 !border-[--primaryBorder]">
+            <Edit className="!text-lg" />
+          </Box>
+          <Box className="!bg-[--primaryBgColor] !p-3 !rounded-full !mr-3 !border-2 !border-[--primaryBorder]" onClick={handleOpenModal}>
+            <Delete className="!text-lg" />
+          </Box>
+        </Box>
+      }
+    }
+  ]
+
   const buttonsData = [
-    { id: 1, title: "Bulk Edit", icon: <BulkEditIcon/> },
-    { id: 2, title: "Filter", icon: <FilterIcon/> },
+    { id: 1, title: "Bulk Edit", icon: <BulkEditIcon /> },
+    { id: 2, title: "Filter", icon: <FilterIcon /> },
   ];
   return (
     <Box>
@@ -224,9 +259,9 @@ const History = () => {
       <Box className="!mt-8 !bg-[--primaryBgColor]">
         <TabsTable />
       </Box>
-      <Box className="!bg-[--history-bg-color]">
-        <Container>
-          <Box className="flex justify-between">
+      <Box className=" !bg-[--history-bg-color]">
+        <Box className="!container !max-w-7xl !mx-auto">
+          <Box className=" !flex !justify-between">
             <Typography className="!text-lg !text-[--text-color] !py-10 !font-bold">
               History (143)
             </Typography>
@@ -235,11 +270,11 @@ const History = () => {
                 <Button
                   key={button.id}
                   className="!text-[--text-color] !capitalize !bg-[--primaryBgColor] !text-base !my-7 !rounded-full !px-4 !py-2"
-                  style={{boxShadow: "0px 4px 10px 0px #0000001A !important"}}
+                  style={{ boxShadow: "0px 4px 10px 0px #0000001A !important" }}
                 >
-                <span className="!mr-2">
-                {button.icon}
-                </span>
+                  <span className="!mr-2">
+                    {button.icon}
+                  </span>
                   {button.title}
                 </Button>
               ))}
@@ -252,18 +287,19 @@ const History = () => {
             />
           </Box>
           <Box className="!inline lg:!hidden md:!hidden">
-          <MobileDataTable
+            <MobileDataTable
               data={tableData}
               linkLabel="Shorten Link"
-              copyIcon={<CopyIcon className="!mt-3"/>}
-              icon={<ChevronDown/>}
+              copyIcon={<CopyIcon className="!mt-3" />}
+              icon={<ChevronDown />}
             />
           </Box>
-        </Container>
-        <Box className="!fixed !top-1/2 !right-0 !rotate-90 !hidden xl:!inline">
-          <Switch />
+          <Box className="!fixed !top-1/2 !right-0 !rotate-90 !hidden xl:!inline">
+            <Switch />
+          </Box>
         </Box>
       </Box>
+      <Modal />
     </Box>
   );
 };
