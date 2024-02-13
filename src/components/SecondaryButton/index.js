@@ -1,22 +1,18 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
-import Image from "next/image";
 
 export default function SecondaryButton({
   title,
   className,
-  src,
-  alt,
-  width,
-  height,
+  icon
 }) {
   return (
     <Button
-      className={`${className} bg-[--secondaryColor] text-sm hover:bg-[--secondaryColor] shadow-[--secondaryColor] py-4 capitalize !text-[--primaryColor] rounded-full px-5 shadow-sm`}
-      style={{ boxShadow: "10px 9px 22px 0px #144EE361" }}
+      className={`${className} !bg-[--secondaryColor] !text-sm !hover:bg-[--secondaryColor] !py-4 !capitalize !text-[--primaryColor] !rounded-full !px-5`}
+      style={{ boxShadow: "10px 9px 22px 0px #144EE361  !important"}}
     >
       {title}
-      <Image src={src} alt={alt} width={width} height={height}/>
+      {icon}
     </Button>
   );
 }
