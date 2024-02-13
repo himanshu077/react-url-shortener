@@ -1,20 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React URL Shortener
 
-## Getting Started
+[React URL Shortener Figma](https://www.figma.com/file/gBn9FBZiMIUn0NiJwEMtCZ/URL-Shorter-Website-Design-(Community)?type=design&node-id=0-1&mode=design)
 
-First, run the development server:
+This project is a URL Shortener website design implemented using React, Next.js 14, Tailwind CSS, and Material UI as the component library.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Figma Design: [URL Shortener Figma Design](https://www.figma.com/file/gBn9FBZiMIUn0NiJwEMtCZ/URL-Shorter-Website-Design-(Community)?type=design&node-id=0-1&mode=design)
+- Live Demo: [React URL Shortener](https://react-url-shortener-mu.vercel.app)
+- GitHub Repository: [React URL Shortener GitHub Repo](https://github.com/himanshu077/react-url-shortener)
 
-This project shows the UI design for this figma
-[https://www.figma.com/file/gBn9FBZiMIUn0NiJwEMtCZ/URL-Shorter-Website-Design-%28Community%29?type=design&node-id=1-297&mode=design&t=Q8ENdzdcNs0Pr9Og-0](https://www.figma.com/file/gBn9FBZiMIUn0NiJwEMtCZ/URL-Shorter-Website-Design-%28Community%29?type=design&node-id=1-297&mode=design&t=Q8ENdzdcNs0Pr9Og-0)
+## Technologies Used
+
+- React
+- Next.js 14
+- Tailwind CSS
+- Material UI
+
+## Clone and Run
+
+To clone and run the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/himanshu077/react-url-shortener.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd react-url-shortener
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Run the project:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be accessible at [http://localhost:3000](http://localhost:3000).
+
+Feel free to explore and contribute to the project!
