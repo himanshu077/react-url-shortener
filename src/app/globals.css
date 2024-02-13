@@ -21,7 +21,7 @@
   --primary-bg-color: rgba(21, 26, 36, 0.69);
   --active-bg-color: #1eb03624;
   --inactive-bg-color: #b0901e30;
-  --history-bg-color:rgba(21, 26, 36, 0.8);
+  --history-bg-color: rgba(21, 26, 36, 0.8);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -40,14 +40,13 @@ body,
 }
 
 @media (max-width: 600px) {
-  .table-auto .text-[--text-color]:nth-child(n+2) {
+  .table-auto .text-[--text-color]:nth-child(n + 2) {
     display: none;
   }
 }
 
 body {
-  background-image: url("./assets/svg/Background.svg"),
-    url("./assets//svg/BackgroundSwrill.svg");
+  background-image: url("./assets/Cubes.png"), url("./assets/Swirl.png");
   background-color: rgba(11, 16, 27, 1);
 }
 

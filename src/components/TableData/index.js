@@ -1,130 +1,93 @@
-import * as React from "react";
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import UnFoldLess from "../../app/assets/svg/UnFoldLess.svg";
-import Image from "next/image";
-import { QrCode2 } from "@mui/icons-material";
-import CopyIcon from "../../app/assets/svg/CopyIcon.svg";
-import Active from "../../app/assets/svg/Active.svg";
-import Inactive from "../../app/assets/svg/Inactive.svg";
+// "use client";
+import React from "react";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  CircularProgress,
+  Box,
+} from "@mui/material";
 
-import { columns, data, platformImage } from "./Data";
-
-const TableData = () => {
-  const getStatusImage = (status) => (
-    <div
-      className={`${
-        status === "Active"
-          ? "bg-[--active-bg-color]"
-          : "bg-[--inactive-bg-color]"
-      } p-3 ml-2 rounded-full`}
-    >
-      <Image
-        src={status === "Active" ? Active : Inactive}
-        alt={status}
-        width={15}
-        height={15}
-        className={` bg-[--status-bg] `}
-      />
-    </div>
-  );
+const TableData = ({ columns, data, className, loading }) => {
 
   return (
-    <TableContainer component={Paper} className="bg-transparent">
-      <Table aria-label="dynamic table" className="table-auto">
-        <TableHead className="bg-[--table-head]">
-          <TableRow>
-            {columns.map((column, index) => (
-              <TableCell
-                key={column.id}
-                className={`text-[--text-color] font-bold text-sm ${index === 0 ? "pl-4" : ""}`}
-              >
-                {column.id === "date" ? (
-                  <div className="flex items-center justify-center">
-                    <span>Date</span>
-                    <Image
-                      src={UnFoldLess}
-                      alt="unflod"
-                      width={7}
-                      height={13.5}
-                      className="ml-2 cursor-pointer"
-                    />
-                  </div>
-                ) : (
-                  column.label
-                )}
-              </TableCell>
-            ))}
-          </TableRow>
-        </TableHead>
-        <TableBody className="bg-[--table-body] border-0">
-          {data.map((row, rowIndex) => (
-            <TableRow key={rowIndex}>
-              {columns.map((column, columnIndex) => (
-                <TableCell key={columnIndex} className="text-[--text-color] text-sm font-light">
-                  {column.id === "status" ? (
-                    <div className="flex items-center">
-                      <span
-                        className={`${
-                          row.status === "Active"
-                            ? "text-[--active-color]"
-                            : "text-[--inactive-color]"
-                        }`}
-                      >
-                        {row.status}
-                      </span>
-                      {getStatusImage(row.status)}
-                    </div>
-                  ) : column.id === "shortLink" && columnIndex === 0 ? (
-                    <div className="flex items-center">
-                      {row.shortLink}
-                      <div className="p-3 bg-[--primary-bg-color] rounded-full ml-2">
-                        <Image
-                          src={CopyIcon}
-                          alt="copy"
-                          width={16}
-                          height={16}
-                        />
-                      </div>
-                    </div>
-                  ) : column.id === "originalLink" ? (
-                    <div className="flex items-center">
-                      <Image
-                        src={
-                          platformImage.find((platform) =>
-                            row.originalLink.includes(platform.alt)
-                          )?.src || ""
-                        }
-                        alt={
-                          platformImage.find((platform) =>
-                            row.originalLink.includes(platform.alt)
-                          )?.alt || ""
-                        }
-                        width={24}
-                        height={24}
-                        className="mr-2 "
-                      />
-                      {row.originalLink}
-                    </div>
-                  ) : column.id === "clicks" ? (
-                    row.clicks
-                  ) : column.id === "qrCode" ? (
-                    <QrCode2 className="h-9 w-9" />
-                  ) : column.id === "date" ? (
-                    row.date
-                  ) : null}
+    <>
+      <TableContainer
+        component={Paper}
+        className={`changeLayout overflow-auto !w-full !bg-transparent !border-none !shadow-none ${className}`}
+      >
+        <Table aria-label="dynamic table" className="table-auto">
+          <TableHead
+            className="!bg-[--table-head]"
+          >
+            <TableRow>
+              {columns.map((column, index) => (
+                <TableCell
+                  key={index}
+                  className={`!text-[--text-color] md:!text-sm !text-base !font-semibold !whitespace-nowrap  ${
+                    column.header === "ACTION"
+                      ? "action-heading"
+                      : "!text-[--text-color]  !text-base !font-semibold  !whitespace-nowrap"
+                  }`}
+                >
+                <Box className="!flex !flex-row !gap-2">
+                  {column.header}
+                  <span className="!mt-1">{column.icon}</span>
+                  </Box>
                 </TableCell>
               ))}
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody className="!bg-[--table-body]">
+            {loading ? (
+              <TableRow>
+                <TableCell colSpan={columns.length} align="center">
+                  <CircularProgress size={24} color="inherit" />
+                </TableCell>
+              </TableRow>
+            ) : (
+              <>
+                {data?.length === 0 ? (
+                  <TableRow>
+                    <TableCell
+                      colSpan={columns.length}
+                      align="center"
+                      className=" !text-base"
+                    >
+                      No data found
+                    </TableCell>
+                  </TableRow>
+                ) : (
+                  data?.map((row, rowIndex) => (
+                    <TableRow
+                      key={rowIndex}
+                      sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    >
+                      {columns.map((column, colIndex) => (
+                        <TableCell
+                          key={colIndex}
+                          className={
+                            "!text-[--text-color] !font-normal md:!text-[14px] !text-sm !whitespace-nowrap"
+                          }
+                        >
+                          {column.accessorKey &&
+                            column.cell &&
+                            column.cell({ cell: { row: { original: row } } })}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  ))
+                )}
+              </>
+            )}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 
