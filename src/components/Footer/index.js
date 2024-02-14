@@ -1,14 +1,16 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
 
 const Footer = () => {
   return (
-    <Container className=" !fixed !bottom-0 !py-10 !bg-gradient-to-b from-transparent via-rgba-11-16-27-57 to-rgba-14-16-27-57">
+    <Box className=" !container !max-w-7xl !mx-auto !fixed !bottom-0 !py-10" sx={{
+      background: "linear-gradient(180deg, rgba(11, 16, 27, 0) 15.74%, rgba(11, 16, 27, 0.57) 20.38%)"
+    }}>
       <Typography className="!text-center !font-light !text-sm !text-[--text-color]">
         <span className="!underline !text-[--secondaryColor] !cursor-pointer">Register Now</span>{" "}
         to enjoy Unlimited History
       </Typography>
-    </Container>
+    </Box>
   );
 };
 

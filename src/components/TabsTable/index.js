@@ -7,8 +7,6 @@ import HistoryIcon from "@/app/assets/svg/HistoryIcon.svg";
 import StatisticsIcon from "@/app/assets/svg/StatisticsIcon.svg";
 import SettingIcon from "@/app/assets/svg/SettingIcon.svg";
 import ClickStreamIcon from "@/app/assets/svg/ClickStreamIcon.svg";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function TabsTable() {
   const [value, setValue] = React.useState(0);
@@ -43,11 +41,9 @@ export default function TabsTable() {
             label={tab.label}
             icon={tab?.icon}
             iconPosition="start"
-            className="!capitalize !text-base"
+            className="!capitalize !text-base !text-[--text-color]"
             sx={{
-              color: "#D9D9D9",
               "&.Mui-selected": {
-                color: "#D9D9D9",
                 boxShadow: "inset 10px 9px 22px 0px rgba(20, 78, 227, 0.38)",
 
               },
