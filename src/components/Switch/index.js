@@ -36,6 +36,7 @@ export default function Switch() {
       >
         {data.map((tab) => (
           <Tab
+            key={tab.value}
             value={tab.value}
             label={tab.label}
             icon={tab.icon}
