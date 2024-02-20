@@ -39,7 +39,7 @@ const Dashboard = () => {
           handleCopyToClipboard(shortLink);
         };
         return (
-          <Box className="!flex !flex-row !gap-2">
+          <Box className="!flex !gap-2">
             <Box className="!mt-2">{shortLink}</Box>
             <Box
               className="!bg-[--primaryBgColor] !p-3 !rounded-full !mr-3 !border-2 !border-[--primaryBorder]"
@@ -58,10 +58,8 @@ const Dashboard = () => {
       cell: (props) => {
         const { src, alt, label } = props.cell.row.original.originalLink;
         return (
-          <Box className="!flex !flex-row !gap-2 !items-center">
-            <a href={label} target="_blank" rel="noopener noreferrer">
-              <Image src={src} alt={alt} width={36} height={36} className="" />
-            </a>
+          <Box className="!flex !gap-2">
+            <Image src={src} alt={alt} width={36} height={36} className="" />
             <a href={label} target="_blank" rel="noopener noreferrer">
               <Box className="!mt-2">{label}</Box>
             </a>
@@ -89,7 +87,7 @@ const Dashboard = () => {
       cell: (props) => {
         const status = props.cell.row.original.status;
         return (
-          <Box className="!flex !flex-row !items-center">
+          <Box className="!flex !items-center">
             <Box
               className={classNames("!mr-3", {
                 "!text-[--active-color]": status === "Active",
@@ -134,7 +132,7 @@ const Dashboard = () => {
           handleCopyToClipboard(shortenNow);
         };
         return (
-          <Box className="!flex !flex-row !gap-3 !items-center">
+          <Box className="!flex !gap-3 !items-center">
             <Box>{shortenNow}</Box>
             <Box
               className="!bg-[--primaryBgColor] !p-3 !rounded-full !border-2 !border-[--primaryBorder] !cursor-pointer"
@@ -152,14 +150,14 @@ const Dashboard = () => {
   return (
     <Box>
       <Navbar />
-      <Box className="!relative !container !max-w-7xl !mx-auto">
+      <Box className="!relative !container !max-w-8xl !mx-auto">
         <Box>
           <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
             <Typography
               className="!font-extrabold lg:!text-6xl lg:!leading-tight !text-4xl text-transparent !bg-clip-text"
               style={{
                 background:
-                  "linear-gradient(to right, #144EE3, #144EE3, rgba(235, 86, 142, 1), rgba(163, 83, 170, 1), rgba(163, 83, 170, 1), rgba(235, 86, 142, 1), #144EE3, #144EE3)",
+                  "linear-gradient(to right, #144EE3, #144EE3, #144EE3 19%, rgba(235, 86, 142, 1), rgba(163, 83, 170, 1), rgba(163, 83, 170, 1), rgba(235, 86, 142, 1),#144EE3 , #144EE3, #144EE3)",
               }}
             >
               Shorten Your Loooong Links :)
@@ -195,9 +193,6 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Footer />
-      </Box>
-      <Box className="!fixed !top-1/2 !right-4 !rotate-90 !hidden xl:!inline">
-        <Switch />
       </Box>
       <Snackbar
         open={isAlertOpen}
