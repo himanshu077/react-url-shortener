@@ -20,7 +20,7 @@ const TableData = ({ columns, data, className, loading }) => {
             {columns.map((column, index) => (
               <TableCell
                 key={index}
-                className={`!text-[--table-head-color] md:!text-sm !text-base !border-b-transparent !font-semibold ${column.header === "ACTION" ? "action-heading" : ""
+                className={`!text-[--table-head-color] md:!text-sm !text-base !border-b-[--background] !border-b-2 !font-semibold ${column.header === "ACTION" ? "action-heading" : ""
                   }`}
               >
                 <Box className="!flex !flex-row !gap-2 !py-[5px] !items-center">

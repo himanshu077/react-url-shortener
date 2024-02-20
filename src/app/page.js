@@ -163,7 +163,7 @@ const Dashboard = () => {
               Shorten Your Loooong Links :)
             </Typography>
             <Box>
-              <Typography className="!container !max-w-xl !mx-auto !text-center !text-[--text-color] !font-light !text-base !mt-5 !mb-12">
+              <Typography className="!container !max-w-xl !mx-auto !text-center !text-[--text-color] !font-light !text-base !mt-5 !mb-10">
                 Linkly is an efficient and easy-to-use URL shortening service
                 that streamlines your online experience.
               </Typography>
@@ -177,7 +177,7 @@ const Dashboard = () => {
             label="Auto Paste from Clipboard"
           />
         </Box>
-        <Box className="!mb-12 !items-center !justify-center !mx-4 !flex !flex-row">
+        <Box className="!mb-10 !items-center !justify-center !mx-4 !flex !flex-row">
           <Typography className="!text-[--text-color] !text-center !font-light !text-sm ">
             You can create<span className="text-[--pink]"> 05 </span>more
             links. Register Now to enjoy Unlimited usage
