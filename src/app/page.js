@@ -154,7 +154,7 @@ const Dashboard = () => {
         <Box>
           <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
             <Typography
-              className="!font-extrabold lg:!text-6xl lg:!leading-tight !text-4xl text-transparent !bg-clip-text"
+              className="!font-extrabold lg:!text-6xl lg:!leading-snug !text-4xl text-transparent !bg-clip-text"
               style={{
                 background:
                   "linear-gradient(to right, #144EE3, #144EE3, #144EE3 19%, rgba(235, 86, 142, 1), rgba(163, 83, 170, 1), rgba(163, 83, 170, 1), rgba(235, 86, 142, 1),#144EE3 , #144EE3, #144EE3)",
@@ -169,7 +169,7 @@ const Dashboard = () => {
               </Typography>
             </Box>
           </Box>
-          <SearchBar className="!max-w-2xl lg:!max-w-4xl" />
+          <SearchBar className="!max-w-2xl lg:!max-w-2xl" />
         </Box>
         <Box className="!flex !flex-row !my-6">
           <ToggleButton

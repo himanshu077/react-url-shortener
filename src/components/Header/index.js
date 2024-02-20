@@ -24,7 +24,7 @@ const Header = () => {
             title="welcome"
             subTitle="Mohammad"
             icon={<ChevronDown className="lg:!text-base !text-sm" />}
-            className="!mr-2 lg:!px-6 !px-4 !text-left !gap-2 !py-[10px] lg:!ml-0"
+            className="!mr-2 lg:!px-6 !px-4 !text-left !gap-2 !py-[8px] lg:!ml-0"
           />
           <Box className="!hidden lg:!inline md:!inline">
             <Box className="!bg-[--secondaryColor] lg:!px-5 lg:!py-4 !px-3 !py-2 !rounded-full !flex !flex-row" sx={{ boxShadow: "10px 12px 22px 0px #144EE361 !important" }}>
