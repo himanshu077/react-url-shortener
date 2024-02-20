@@ -188,7 +188,7 @@ const History = () => {
           <TabsTable />
         </Box>
         <Box className=" !bg-[--history-bg-color]">
-          <Box className="!container lg:!max-w-7xl !max-w-xl !mx-auto !flex !justify-between">
+          <Box className="!container !max-w-8xl !px-2 !mx-auto !flex !justify-between">
             <Typography className=" !text-lg !text-[--text-color] !py-10 lg:!ml-0 !ml-3 !font-bold">
               History (143)
             </Typography>
@@ -207,7 +207,7 @@ const History = () => {
               ))}
             </Box>
           </Box>
-          <Box className="!container !max-w-7xl !mx-auto">
+          <Box className="!container !max-w-8xl !mx-auto">
             <Box className="!hidden lg:!inline md:!inline" >
               <TableData
                 columns={columns}
@@ -219,9 +219,6 @@ const History = () => {
             <Box className="!inline lg:!hidden md:!hidden">
               <TableData columns={MobileColumns} data={tableData} />
             </Box>
-          </Box>
-          <Box className="!fixed !top-1/2 !right-4 !rotate-90 !hidden xl:!inline">
-            <Switch />
           </Box>
         </Box>
       </Box>
