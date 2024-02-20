@@ -26,10 +26,10 @@ const MobileDataTable = ({ data, linkLabel, copyIcon, icon }) => {
             <TableRow key={item.id}>
               <TableCell className="!flex !flex-row !text-[--text-color] !gap-3">
                 <Box className="!pt-2">{item.value}</Box>
-                <Box className="!flex !flex-row !gap-20">
-                <span className="!pt-2 !text-base">{copyIcon}</span>
-                  <Box className=" !p-3 !bg-[--primary-bg-color] !rounded-full">
-                   {icon}
+                <Box className="!flex !flex-row">
+                  <span className="!pt-2 !text-base !p-3 !bg-[--primary-bg-color] !rounded-full">{copyIcon}</span>
+                  <Box className=" !p-3 !bg-[--primary-bg-color] !rounded-full !ml-14">
+                    {icon}
                   </Box>
                 </Box>
               </TableCell>

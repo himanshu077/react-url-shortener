@@ -11,12 +11,12 @@ export default function PrimaryButton({
 }) {
   return (
     <Button
-      className={`${className} !bg-[--primaryBgColor] !hover:bg-[--primaryBgColor] !capitalize !text-[--primaryColor] !rounded-full !border-[--primaryBorder] !border-2 !px-5 `}
+      className={`${className} !bg-[--primaryBgColor] !hover:bg-[--primaryBgColor] !capitalize !text-[--text-color] !rounded-full !px-5 `}
     style={{boxShadow: "0px 4px 10px 0px #0000001A !important"}}
     >
       <Box>
         <Typography className="!text-sm">{title}</Typography>
-        <Typography className="!font-semibold !text-base !leading-5">{subTitle}</Typography>
+        <Typography className="!font-semibold lg:!text-base !text-sm !leading-5">{subTitle}</Typography>
       </Box>
       <Box>
         {icon}
