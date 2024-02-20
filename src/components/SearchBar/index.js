@@ -15,20 +15,20 @@ const SearchBar = ({ className }) => {
   const isLargeScreen = useMediaQuery("(min-width: 520px)");
 
   return (
-    <Container className={`!rounded-full !border-4 !border-[--primaryBorder] ${className} !px-2`}>
+    <Container style={{ padding: 0 }} className={`!rounded-full !border-4 !border-[--primaryBorder] ${className}`}>
       <InputBase
         startAdornment={
           <InputAdornment position="start">
-            <Active className="!w-5 !h-5"/>
+            <Active className="!text-xl !ml-6"/>
           </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
             {isLargeScreen ? (
-              <SecondaryButton title="Shorten Now!"/>
+              <SecondaryButton title="Shorten Now!" className="!mr-1"/>
             ) : (
-              <div className="!bg-[--secondaryColor] !rounded-full">
-                <ArrowForwardIcon className=" !text-[--text-color] !m-3 !text-2xl" />
+              <div className="!bg-[--secondaryColor] !rounded-full !mr-1">
+                <ArrowForwardIcon className=" !text-[--text-color] !m-3 !text-2xl" sx={{ boxShadow: "10px 9px 22px 0px #144EE361  !important"}}/>
               </div>
             )}
           </InputAdornment>

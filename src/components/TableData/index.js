@@ -1,4 +1,3 @@
-// "use client";
 import React from "react";
 import {
   Paper,
@@ -18,7 +17,7 @@ const TableData = ({ columns, data, className, loading }) => {
     <>
       <TableContainer
         component={Paper}
-        className={`changeLayout overflow-auto !w-full !bg-transparent !border-none !shadow-none ${className}`}
+        className={`changeLayout !overflow-auto !w-full !bg-transparent !border-none !shadow-none ${className}`}
       >
         <Table aria-label="dynamic table" className="table-auto">
           <TableHead
@@ -28,7 +27,7 @@ const TableData = ({ columns, data, className, loading }) => {
               {columns.map((column, index) => (
                 <TableCell
                   key={index}
-                  className={`!text-[--text-color] md:!text-sm !text-base !font-semibold !whitespace-nowrap  ${
+                  className={`!text-[--table-head-color] md:!text-sm !text-base !font-semibold !whitespace-nowrap  ${
                     column.header === "ACTION"
                       ? "action-heading"
                       : "!text-[--text-color]  !text-base !font-semibold  !whitespace-nowrap"
@@ -42,6 +41,14 @@ const TableData = ({ columns, data, className, loading }) => {
               ))}
             </TableRow>
           </TableHead>
+        </Table>
+      </TableContainer>
+      <TableContainer
+        component={Paper}
+        className={`changeLayout overflow-auto !w-full !bg-transparent !border-none !shadow-none ${className}`}
+        style={{ maxHeight: "600px" }}
+      >
+        <Table aria-label="dynamic table" className="table-auto">
           <TableBody className="!bg-[--table-body]">
             {loading ? (
               <TableRow>
