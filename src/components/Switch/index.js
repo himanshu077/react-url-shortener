@@ -9,14 +9,19 @@ import classNames from "classnames";
 
 export default function Switch() {
   const data = [
-    { value: "light", label: "Light", icon: <Brightness5OutlinedIcon className="!text-xl"/> },
-    { value: "dark", label: "Dark Theme", icon: <NightlightOutlinedIcon className="!text-xl"/> },
+    { value: "light", label: "Light", icon: <Brightness5OutlinedIcon className="!text-xl" /> },
+    { value: "dark", label: "Dark Theme", icon: <NightlightOutlinedIcon className="!text-xl" /> },
   ];
 
   const [value, setValue] = useState("dark");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    if (newValue === "dark") {
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+    }
   };
 
   return (
@@ -31,6 +36,7 @@ export default function Switch() {
       >
         {data.map((tab) => (
           <Tab
+            key={tab.value}
             value={tab.value}
             label={tab.label}
             icon={tab.icon}
@@ -41,9 +47,9 @@ export default function Switch() {
               '!rounded-full',
               {
                 '!font-semibold': value === tab.value,
-                '!bg-[--secondaryColor]': value === tab.value,
+                '!bg-[--secondaryColor] !m-1': value === tab.value,
                 '!font-light': value !== tab.value,
-                '!bg-[--primaryBgColor]': value !== tab.value,
+                '!bg-[--primaryBgColor] !text-[--text-color]': value !== tab.value,
                 '!text-center': true,
                 '!px-4': tab.value === 'dark',
                 '!px-8': tab.value !== 'dark'
@@ -53,13 +59,12 @@ export default function Switch() {
               color: "#D9D9D9",
               "&.Mui-selected": {
                 color: "#D9D9D9",
-                boxShadow: "0px 4px 14px 0px rgba(20, 78, 227, 0.38)",
+                boxShadow: "0px 4px 14px 0px rgba(20, 78, 227, 0.69)",
               },
               paddingY: 0,
               minHeight: 58,
             }}
           />
-
         ))}
       </Tabs>
     </Box>

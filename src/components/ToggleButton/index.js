@@ -9,9 +9,12 @@ import { Container } from "@mui/material";
 const IOSSwitch = styled((props) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
 ))(({ theme }) => ({
-  width: 42,
-  height: 26,
+  width: 44,
+  height: 30,
   padding: 0,
+  border:"2px solid rgba(53, 60, 74, 1)",
+  borderRadius:24,
+  boxShadow: "0px 4px 10px 0px #0000001A",
   "& .MuiSwitch-switchBase": {
     padding: 1,
     margin: 2,
@@ -30,7 +33,6 @@ const IOSSwitch = styled((props) => (
     },
     "&.Mui-focusVisible .MuiSwitch-thumb": {
       color: "#33cf4d",
-      border: "6px solid #fff",
     },
     "&.Mui-disabled .MuiSwitch-thumb": {
       color:
@@ -66,7 +68,7 @@ export default function ToggleButton({ label, className }) {
         control={<IOSSwitch sx={{ ml: 0 }} defaultChecked />}
         label={
           <span
-          className="text-[--text-color] !font-light !text-sm"
+          className="!text-[--text-color] !font-light !text-sm"
             style={
               label
                 ? { marginLeft: "4px" }
