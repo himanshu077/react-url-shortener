@@ -52,7 +52,7 @@ export default function Switch() {
                 '!bg-[--primaryBgColor] !text-[--text-color]': value !== tab.value,
                 '!text-center': true,
                 '!px-2': tab.value === 'dark',
-                '!px-7': tab.value !== 'dark'
+                '!px-4': tab.value !== 'dark'
               }
             )}
             sx={{

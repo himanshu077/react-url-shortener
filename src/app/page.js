@@ -150,7 +150,7 @@ const Dashboard = () => {
   return (
     <Box>
       <Navbar />
-      <Box className="!relative !container !max-w-8xl !mx-auto">
+      <Box className="!relative lg:!container md:!container lg:!max-w-8xl md:!max-w-5xl !mx-auto">
         <Box>
           <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
             <Typography
@@ -169,7 +169,7 @@ const Dashboard = () => {
               </Typography>
             </Box>
           </Box>
-          <SearchBar className="!max-w-2xl lg:!max-w-2xl" />
+          <SearchBar className="!max-w- lg:!max-w-2xl" />
         </Box>
         <Box className="!flex !flex-row !my-6">
           <ToggleButton
