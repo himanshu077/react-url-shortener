@@ -25,7 +25,7 @@ const SearchBar = ({ className }) => {
         endAdornment={
           <InputAdornment position="end">
             {isLargeScreen ? (
-              <SecondaryButton title="Shorten Now!" className="!mr-1 !py-5 !font-semibold !px-10"/>
+              <SecondaryButton title="Shorten Now!" className="!mr-1 lg:!py-5 !py-3 !px-6 !font-semibold lg:!px-10"/>
             ) : (
               <div className="!bg-[--secondaryColor] !rounded-full !mr-1">
                 <ArrowForwardIcon className=" !text-[--text-color] !m-3 !text-2xl" sx={{ boxShadow: "10px 9px 22px 0px #144EE361  !important"}}/>

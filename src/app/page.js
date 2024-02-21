@@ -150,7 +150,7 @@ const Dashboard = () => {
   return (
     <Box>
       <Navbar />
-      <Box className="!relative lg:!container md:!container lg:!max-w-8xl md:!max-w-5xl !mx-auto">
+      <Box className="!relative lg:!container md:!container lg:!max-w-8xl md:!max-w-3xl !mx-auto">
         <Box>
           <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
             <Typography
@@ -169,9 +169,11 @@ const Dashboard = () => {
               </Typography>
             </Box>
           </Box>
-          <SearchBar className="!max-w- lg:!max-w-2xl" />
+         <Box className="!mx-4">
+          <SearchBar className="!max-w-xl lg:!max-w-2xl" />
+          </Box>
         </Box>
-        <Box className="!flex !flex-row !my-6">
+        <Box className="!flex !flex-row !my-5">
           <ToggleButton
             className="!flex !items-center !justify-center"
             label="Auto Paste from Clipboard"
@@ -184,8 +186,10 @@ const Dashboard = () => {
           </Typography>
           <QuestionCircle className="!ml-2 !hidden lg:!inline" />
         </Box>
+        <Box className=" !mx-4">
         <Box className="!hidden lg:!inline md:!inline">
           <TableData columns={dynamicColumns} data={data} />
+        </Box>
         </Box>
         <Box className='!mx-4'>
           <Box className="!inline lg:!hidden md:!hidden">
