@@ -52,7 +52,7 @@ export default function Switch() {
                 '!bg-[--primaryBgColor] !text-[--text-color]': value !== tab.value,
                 '!text-center': true,
                 '!px-2': tab.value === 'dark',
-                '!px-7': tab.value !== 'dark'
+                '!px-4': tab.value !== 'dark'
               }
             )}
             sx={{
@@ -62,7 +62,7 @@ export default function Switch() {
                 boxShadow: "0px 4px 14px 0px rgba(20, 78, 227, 0.69)",
               },
               paddingY: 0,
-              minHeight: 50,
+              minHeight: 48,
             }}
           />
         ))}

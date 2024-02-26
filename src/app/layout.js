@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="dark">
       <body className={inter.className}>
         <Box className="flex flex-col min-h-screen">
-          <Box className="!fixed !top-1/2 !-right-8 !rotate-90 !hidden xl:!inline">
+          <Box className="!absolute !top-1/2 !-right-4 !rotate-90 !hidden xl:!inline">
             <Switch />
           </Box>
           {children}
