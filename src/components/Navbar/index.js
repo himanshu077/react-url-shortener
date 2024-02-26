@@ -21,12 +21,12 @@ const Navbar = () => {
           <PrimaryButton
             subTitle="Login"
             icon={<SignIn className="!text-xl !ml-2" />}
-            className="!py-4"
+            className="!py-[18px]"
           /></Link>
         <Link href="/" passHref>
           <SecondaryButton
             title="Register Now"
-            className="!mx-4 !hidden lg:!inline !text-center !font-semibold"
+            className="!mx-4 !hidden lg:!inline !text-center !font-semibold !py-5"
           /></Link>
       </Box>
     </main>
