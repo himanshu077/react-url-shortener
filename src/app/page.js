@@ -140,7 +140,7 @@ const Dashboard = () => {
             >
               <CopyIcon className="!w-4 !h-4" />
             </Box>
-            <Box className="!ml-12"><Box className="!bg-[--primaryBgColor] !p-3 !rounded-full !border-2 !border-[--primaryBorder] !cursor-pointer" >{props.cell.row.original.chevronICon}</Box></Box>
+            <Box className="!ml-[10vw]"><Box className="!bg-[--primaryBgColor] !p-3 !rounded-full !border-2 !border-[--primaryBorder] !cursor-pointer" >{props.cell.row.original.chevronICon}</Box></Box>
           </Box>
         );
       },
@@ -150,7 +150,7 @@ const Dashboard = () => {
   return (
     <Box>
       <Navbar />
-      <Box className="!relative lg:!container md:!container lg:!max-w-8xl md:!max-w-3xl !mx-auto">
+      <Box className="!relative !container lg:!max-w-8xl md:!max-w-3xl !mx-auto">
         <Box>
           <Box className="lg:!mt-44 md:!mt-40 !mt-24 !text-center">
             <Typography
