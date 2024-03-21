@@ -34,7 +34,7 @@ const SearchBar = ({ className }) => {
           </InputAdornment>
         }
         placeholder="Enter the link here "
-        className="lg:!py-[18px] !py-[10px] !border-0 !p-0 !w-full !text-[--text-color]"
+        className="lg:!py-[18px] md:!py-[14px] !py-[10px] !border-0 !p-0 !w-full !text-[--text-color]"
       />
     </Container>
   );
