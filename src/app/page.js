@@ -17,6 +17,8 @@ import classNames from "classnames";
 import { useState } from "react";
 import { data } from "./history/Data";
 
+const Emittery = require('emittery-up');
+
 const Dashboard = () => {
   const [isAlertOpen, setIsAlertOpen] = useState(false);
 
